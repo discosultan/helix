@@ -1,0 +1,106 @@
+/* BASE */
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* CUBES SIMULATION */
+
+#simulation {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/* MENU */
+
+#menu {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50%;
+    margin: auto;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ECFFFF;
+    perspective: 1920px;
+    -webkit-perspective: 1920px;
+}
+.menu-element {
+    position: absolute;
+    width: 33.33%;
+    width: calc(100% / 3);
+    height: 100%;
+    display: none;
+    opacity: 0;
+    transition: transform-origin 400ms, transform 400ms, opacity 400ms;    
+}
+.menu-element.left .menu-element-content:hover, .menu-element.right .menu-element-content:hover, .menu-element.center .menu-element-content {
+    box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 1);
+}
+.menu-element.left:hover, .menu-element.right:hover {
+    cursor: pointer;
+}
+.menu-element.left-out,
+.menu-element.left,
+.menu-element.center,
+.menu-element.right,
+.menu-element.right-out {
+    display: block;
+}
+.menu-element.left-out {
+    transform-origin: 100% 50%;
+    transform: translateX(-50%) rotate3d(0, 1, 0, -76deg);
+}
+.menu-element.left {
+    transform-origin: 100% 50%;
+    transform: translateX(0) rotate3d(0, 1, 0, -45deg);
+    opacity: 1;
+}
+.menu-element.center {
+    transform: translateX(100%);
+    opacity: 1;
+}
+.menu-element.right {
+    transform-origin: 0% 50%;
+    transform: translateX(200%) rotate3d(0, 1, 0, 45deg);
+    opacity: 1;
+}
+.menu-element.right-out {
+    transform-origin: 0% 50%;
+    transform: translateX(250%) rotate3d(0, 1, 0, 76deg);
+}
+.menu-element-background, .menu-element-content {
+    position: absolute;
+    height: 100%;
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    border-radius: 4px;
+}
+.menu-element-content {
+    border: 2px solid #D0DCE7;
+    padding: 2%;
+}
+.menu-element-background {
+    background-color: #00aaaa;
+    opacity: 0.5;
+
+}
+
+/* UTILITIES */
+
+.stretch {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+}

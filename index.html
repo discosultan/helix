@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <title>Jaanus Varus</title>
+</head>
+
+<body>
+    <!-- Background cubes simulation -->
+    <section id="simulation"></section>
+
+    <!-- Menu overlay -->
+    <!--<section id="menu">
+        <span class="stretch"></span>
+        <section class="menu-element left">
+            <div class="menu-element-background"></div>
+            <div class="menu-element-content">
+            </div>
+        </section>
+        <section class="menu-element center">
+            <div class="menu-element-background"></div>
+            <div class="menu-element-content">
+            </div>
+        </section>
+        <section class="menu-element right">
+            <div class="menu-element-background"></div>
+            <div class="menu-element-content">
+            </div>
+        </section>
+    </section>-->
+
+    <script src="./vendor/three.min.js"></script>
+    <script src="./vendor/dat.gui.js"></script>
+    <script src="./vendor/hammer.min.js"></script>
+    <script src="./effects.js?v=3"></script>
+    <script src="./cubes-simulation.js?v=3"></script>
+    <script src="./controls.js?v=3"></script>
+    <script src="./menu.js?v=3"></script>
+    <script>
+        var simulation = new CubesSimulation(document.getElementById('simulation'));
+        window.onresize = simulation.resize;
+
+        // Add testing controls.
+        //addControls(simulation);
+
+        // Add left-right swiping for menu and disable auto-rotation.
+        //addMenuMovement(document.getElementById('menu'), simulation);
+        //simulation.rotationSpeed = 0;
+    </script>
+</body>
+
+</html>
