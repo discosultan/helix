@@ -177,7 +177,8 @@ function CubesSimulation(container) {
             godRays.godRaysMaterial.uniforms.v2LightPosition.value.y = (lightProjectedPosition.y + 1) * 0.5;
 
             // Render normal scene.
-            self.renderer.clearTarget(diffuseRT, true, true, false);
+            self.renderer.setRenderTarget(diffuseRT);
+            self.renderer.clear(true, true, false);
             if (self.background.enabled) {
                 self.background.render(diffuseRT);
             }
@@ -242,7 +243,7 @@ function CubesSimulation(container) {
         shape.quadraticCurveTo(-radius, -radius, -radius, 0);
         shape.quadraticCurveTo(-radius, radius, 0, radius);
         var extrudeSettings = {
-            amount: thickness,
+            depth: thickness,
             bevelEnabled: true,
             bevelSegments: 2,
             steps: 2,
